@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  locust:
+    image: locustio/locust
+    command: -f /locust-tasks/locustfile.py --host=http://proyectosrandom.net:5000
+    ports:
+      - 8089:8089
+    volumes:
+      - ./locust-tasks:/locust-tasks
